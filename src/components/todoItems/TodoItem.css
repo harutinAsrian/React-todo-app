@@ -1,0 +1,25 @@
+.icon {
+  width: 40px;
+}
+
+.todo-item-container {
+  display: flex;
+  margin: 8px;
+  padding: 4px 8px;
+  transition: 0.5s ease;
+}
+.todo-item-container:hover {
+  background-color: rgba(225, 225, 225, 0.5);
+}
+.item__text {
+  flex-grow: 1;
+}
+.todo-item {
+  padding: 4px;
+}
+.item__text {
+  cursor: pointer;
+}
+.done {
+  text-decoration: line-through;
+}
