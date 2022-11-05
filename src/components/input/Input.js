@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodoList } from "../../actions/";
+import { addTodoList } from "../../redux/actions";
 
 function Input() {
   const dispatch = useDispatch();

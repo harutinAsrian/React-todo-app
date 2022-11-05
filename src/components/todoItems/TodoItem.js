@@ -1,7 +1,7 @@
 import React from "react";
 import "./TodoItem.css";
 import { useDispatch } from "react-redux";
-import { removeFromList, doneTodo, activeTodo } from "../../actions/";
+import { removeFromList, doneTodo, activeTodo } from "../../redux/actions";
 
 function TodoItem({ id, text, completed, active }) {
   const dispatch = useDispatch();
@@ -17,11 +17,12 @@ function TodoItem({ id, text, completed, active }) {
         {text}
       </div>
       <div className="todo-item">
-        <button type="button" className="btn btn-outline-danger icon">
-          <i
-            className="fas fa-trash-alt"
-            onClick={() => dispatch(removeFromList(id))}
-          ></i>
+        <button
+          type="button"
+          className="btn btn-outline-danger icon"
+          onClick={() => dispatch(removeFromList(id))}
+        >
+          <i className="fas fa-trash-alt"></i>
         </button>
       </div>
       <div className="todo-item">
@@ -32,11 +33,9 @@ function TodoItem({ id, text, completed, active }) {
               ? "btn btn-outline-success icon active"
               : "btn btn-outline-success icon"
           }
+          onClick={() => dispatch(activeTodo(id))}
         >
-          <i
-            className="fas fa-exclamation"
-            onClick={() => dispatch(activeTodo(id))}
-          ></i>
+          <i className="fas fa-exclamation" ></i>
         </button>
       </div>
     </div>

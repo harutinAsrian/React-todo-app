@@ -16,6 +16,8 @@
 }
 .todo-item {
   padding: 4px;
+  display: flex;
+  align-items: center;
 }
 .item__text {
   cursor: pointer;

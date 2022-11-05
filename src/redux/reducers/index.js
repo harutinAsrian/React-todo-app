@@ -43,6 +43,7 @@ const itemListReducer = (state = initialstate, action) => {
           return {
             ...todo,
             completed: !todo.completed,
+            active: false,
           };
         }),
       };

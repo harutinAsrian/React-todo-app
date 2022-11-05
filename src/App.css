@@ -12,6 +12,15 @@
   display: flex;
   justify-content: center;
 }
+.btn:focus {
+  box-shadow: none !important;
+}
+.btn:hover {
+  color: white;
+}
+.btn-group .btn.active {
+  color: white;
+}
 .btn-group {
   margin-left: 14px;
 }

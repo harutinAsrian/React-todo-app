@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { filterList } from "../../actions/index";
+import { filterList } from "../../redux/actions/index";
 
 function Search() {
   const dispatch = useDispatch();

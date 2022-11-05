@@ -1,18 +1,26 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Buttons() {
+  const [activeTab, setActiveTab] = useState('all');
+
+  const tabs = ['all', 'active', 'done'];
+
   return (
     <div className="btn-group" role="group" aria-label="Basic example">
-      <button type="button" className="btn btn-outline-info">
-        <Link to="/">All</Link>
-      </button>
-      <button type="button" className="btn btn-outline-info">
-        <Link to="/active">Active</Link>
-      </button>
-      <button type="button" className="btn btn-outline-info">
-        <Link to="/done">Done</Link>
-      </button>
+      {tabs.map((tab, idx) => (
+        <Link key={idx} to={`${tab === 'all' ? '/' : `/${tab}`}`}>
+          <button
+            onClick={() => setActiveTab(tab)}
+            type="button"
+            className={`btn btn-outline-info ${
+              activeTab === tab ? 'active' : ''
+            }`}
+          >
+            {tab}
+          </button>
+        </Link>
+      ))}
     </div>
   );
 }
